@@ -30,7 +30,9 @@ class SongSpider(scrapy.Spider):
                 entry_name = entry.css('.textDir::text').extract()[0]
                 # print('-------------  ENTRY NAME ---------')
                 # print(entry_name.encode('utf-8  '))
-                entry_name = entry_name.strip().encode('utf-8')
+#                raise ArithmeticError('a' + str(type(entry_name)))
+#                 entry_name = entry_name.strip().encode('utf-8')
+                entry_name = entry_name.strip() #.encode('utf-8')
                 # print(url)
                 # print(entry_name)
 

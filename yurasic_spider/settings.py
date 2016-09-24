@@ -61,15 +61,29 @@ NEWSPIDER_MODULE = 'yurasic_spider.spiders'
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
+############################################################
+
+# ITEM_PIPELINES = {
+#    # 'yurasic_spider.pipelines.SomePipeline': 300,
+#   'scrapy_mongodb.MongoDBPipeline',
+# }
+#
+# MONGODB_URI = 'mongodb://localhost:27017'
+# MONGODB_DATABASE = 'scrapy'
+# MONGODB_COLLECTION = 'my_items'
+
+############################################################
+
 ITEM_PIPELINES = {
-   # 'yurasic_spider.pipelines.SomePipeline': 300,
-  'scrapy_mongodb.MongoDBPipeline',
+  'scrapycouchdb.CouchDBPipeline' : 100,
 }
 
-MONGODB_URI = 'mongodb://localhost:27017'
-MONGODB_DATABASE = 'scrapy'
-MONGODB_COLLECTION = 'my_items'
+COUCHDB_SERVER = 'http://127.0.0.1:5984/'
+COUCHDB_DB = 'songs'
+COUCHDB_UNIQ_KEY = 'url'
+COUCHDB_IGNORE_FIELDS = ['visit_id', 'visit_status']
 
+############################################################
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html

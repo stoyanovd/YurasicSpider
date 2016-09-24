@@ -6,7 +6,8 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import os
 
-authors_file = '/home/dima/PycharmProjects/yurasic_spider/authors.txt'
+#authors_file = '/home/dima/PycharmProjects/yurasic_spider/authors.txt'
+authors_file = 'C:\\Users\\stoya\\work\\spider\\authors.txt'
 
 
 class YurasicSpiderPipeline(object):
